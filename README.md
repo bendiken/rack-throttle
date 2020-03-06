@@ -1,3 +1,13 @@
+DEPRECATED We suggest using rack-attack instead
+===============================================
+
+<https://github.com/kickstarter/rack-attack> Accomplishes the same goal as rack-throttle,
+but has more active maintenance, usage, and maturity. Please think about using rack-attack
+over rack-throttle.
+
+rack-throttle will still continue to exist to support legacy ruby applications (<2.3), but
+will not be getting new features added as it exists strictly to support existing apps.
+
 HTTP Request Rate Limiter for Rack Applications
 ===============================================
 
@@ -6,7 +16,7 @@ HTTP requests to Rack applications. You can use `Rack::Throttle` with any
 Ruby web framework based on Rack, including with Ruby on Rails and with
 Sinatra.
 
-* <https://github.com/bendiken/rack-throttle>
+* <https://github.com/dryruby/rack-throttle>
 
 Features
 --------

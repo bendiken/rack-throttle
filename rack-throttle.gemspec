@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.date               = File.mtime('VERSION').strftime('%Y-%m-%d')
 
   gem.name               = 'rack-throttle'
-  gem.homepage           = 'https://github.com/bendiken/rack-throttle'
+  gem.homepage           = 'https://github.com/dryruby/rack-throttle'
   gem.license            = 'Public Domain' if gem.respond_to?(:license=)
   gem.summary            = 'HTTP request rate limiter for Rack applications.'
   gem.description        = 'Rack middleware for rate-limiting incoming HTTP requests.'
@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.email              = 'arto@bendiken.net'
 
   gem.platform           = Gem::Platform::RUBY
-  gem.files              = %w(AUTHORS README UNLICENSE VERSION) + Dir.glob('lib/**/*.rb')
+  gem.files              = %w(AUTHORS README.md UNLICENSE VERSION) + Dir.glob('lib/**/*.rb')
   gem.bindir             = %q(bin)
   gem.executables        = %w()
   gem.default_executable = gem.executables.first
@@ -38,5 +38,9 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency     'rack',      '>= 1.0.0'
 
-  gem.post_install_message       = nil
+  gem.post_install_message       = <<-POST
+rack-throttle is no longer under active development. Please consider
+using https://github.com/kickstarter/rack-attack instead as it is
+more feature rich & well supported.
+  POST
 end

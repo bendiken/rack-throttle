@@ -1,6 +1,7 @@
 require 'rack'
 
 module Rack
+  #<b>DEPRECATED:</b> rack-throttle is deprecated please consider using rack-attack
   module Throttle
     autoload :Limiter,    ::File.expand_path(::File.dirname(__FILE__)) + '/throttle/limiter'
     autoload :Interval,   ::File.expand_path(::File.dirname(__FILE__)) + '/throttle/interval'

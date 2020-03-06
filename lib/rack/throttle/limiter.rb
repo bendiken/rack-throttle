@@ -23,6 +23,7 @@ module Rack; module Throttle
     # @option options [String]  :message    ("Rate Limit Exceeded")
     # @option options [String]  :type       ("text/plain; charset=utf-8")
     def initialize(app, options = {})
+      warn "[DEPRECATION] `rack-throttle` is deprecated.  Please use consider using `rack-attack` https://github.com/kickstarter/rack-attack instead."
       @app, @options = app, options
     end
 
