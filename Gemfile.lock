@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rack-throttle (0.6.0)
+    rack-throttle (0.7.0)
       bundler (>= 1.0.0)
       rack (>= 1.0.0)
 
@@ -39,4 +39,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.16.1
+   1.17.3

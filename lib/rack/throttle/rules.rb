@@ -17,11 +17,11 @@ module Rack
           rs.sort_by { |r| [r[:proc].to_s, r[:path].to_s] }.reverse
         end
       end
-    
+
       def retry_after
         @min ||= (options[:min] || 3600)
       end
-  
+
       def default_limit
         @default_limit ||= options[:default] || 1_000_000_000
       end
@@ -38,7 +38,7 @@ module Rack
 
       def ip_whitelisted?(request_ip)
         !!ips.find { |ip| ip.include?(request_ip) }
-      end 
+      end
 
       def rule_whitelisted?(request)
         rule = rule_for(request)
@@ -56,23 +56,23 @@ module Rack
 
       def path_matches?(rule, path)
         return true unless rule[:path]
-        return true if     path.to_s.match(rule[:path])
+        return true if     path.to_s.gsub(%r{/+}, "/").match(rule[:path])
         false
       end
-      
+
       def max_per_window(request)
         rule = rule_for(request)
         rule ? rule[:limit] : default_limit
       end
 
       def client_identifier(request)
-        if (rule = rule_for(request)) 
+        if (rule = rule_for(request))
           client_identifier_for_rule(request, rule)
         else
           ip(request)
         end
       end
-          
+
       def client_identifier_for_rule(request, rule)
         if rule[:proc]
           "#{rule[:method]}_#{rule[:proc].call(request)}"
