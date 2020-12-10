@@ -186,7 +186,7 @@ rules = [
   { method: "POST", limit: 5 },
   { method: "GET", limit: 10 },
   { method: "GET", path: "/users/.*/profile", limit: 3 },
-  { method: "GET", path: "/users/.*/reset_password", limit: 1 }
+  { method: "GET", path: "/users/.*/reset_password", limit: 1 },
   { method: "GET", path: "/external/callback", whitelisted: true }
 ]
 ip_whitelist = [
